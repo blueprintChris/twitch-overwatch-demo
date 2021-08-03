@@ -1,0 +1,23 @@
+.player-stats-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.player-stats {
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.player-stats-stat {
+  flex: 1;
+}
+
+.player-stats h3 {
+  margin: 0;
+}
