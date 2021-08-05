@@ -1,7 +1,46 @@
 .search-input-wrapper {
-  margin-bottom: 10px;
+  height: 90px;
 }
 
 .search-input {
-  margin: 5px;
+  flex: 1;
+  height: 100%;
+  padding: 8px 12px;
+  border-radius: 3px 0 0 3px;
+  border: 1px solid var(--colours-ow-dark-blue);
+  background-color: var(--colours-ow-dark-blue);
+  color: white;
+  box-sizing: border-box;
+  font-size: 30px;
+  font-family: Overwatch, Arial, Helvetica, sans-serif;
+  letter-spacing: 1px;
+}
+
+.search-btn {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-size: 30px;
+  background-color: var(--colours-ow-orange);
+  border: 0;
+  border-radius: 0 3px 3px 0;
+  color: white;
+  cursor: pointer;
+  width: 70px;
+}
+
+.search-btn:hover {
+  background-color: var(--colours-ow-orange-light);
+}
+
+.search-input:focus {
+  border: 1px solid var(--colours-ow-orange);
+  outline: 0;
+}
+
+.search-btn:disabled {
+  background-color: var(--colours-ow-orange-light);
+  cursor: default;
 }

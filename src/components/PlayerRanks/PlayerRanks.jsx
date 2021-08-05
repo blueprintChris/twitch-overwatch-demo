@@ -5,32 +5,18 @@ const PlayerRanks = props => {
   const { playerStats } = props;
   const { competitive_rank } = playerStats.stats;
 
+  const isInRange = (x, min, max) => {
+    return x >= min && x <= max;
+  };
+
   const handleRankImage = rank => {
-    switch (true) {
-      case rank < 1500:
-        return 'bronze';
-
-      case rank >= 1500 && rank < 2000:
-        return 'silver';
-
-      case rank >= 2000 && rank < 2500:
-        return 'gold';
-
-      case rank >= 2500 && rank < 3000:
-        return 'plat';
-
-      case rank >= 3000 && rank < 3500:
-        return 'diamond';
-
-      case rank >= 3500 && rank < 4000:
-        return 'master';
-
-      case rank >= 4000:
-        return 'gm';
-
-      default:
-        console.log('default?!?!');
-    }
+    if (isInRange(rank, 0, 1500)) return 'bronze';
+    if (isInRange(rank, 1500, 2000)) return 'silver';
+    if (isInRange(rank, 2000, 2500)) return 'gold';
+    if (isInRange(rank, 2500, 3000)) return 'platinum';
+    if (isInRange(rank, 3000, 3500)) return 'diamond';
+    if (isInRange(rank, 3500, 4000)) return 'master';
+    if (isInRange(rank, 4000, 5000)) return 'gm';
   };
 
   return (

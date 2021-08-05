@@ -1,9 +1,39 @@
 @font-face {
   font-family: 'Overwatch';
-  src: local('Overwatch'), url('./fonts/big_noodle_titling_oblique.ttf') format('truetype');
+  src: local('Overwatch'), url('./fonts/big-noodle-too.woff') format('woff');
 }
 
-.App {
+.app {
   text-align: center;
   font-family: Overwatch, Arial, Helvetica, sans-serif;
+  background-color: var(--colours-ow-dark-blue);
+  padding: 0 20px;
+  --colours-ow-light-pink: #f0edf2;
+  --colours-ow-orange: #f99e1a;
+  --colours-ow-orange-light: #f5c57e;
+  --colours-ow-grey: #43484c;
+  --colours-ow-dark-blue: #405275;
+  --colours-ow-light-blue: #546b99;
+  --colours-ow-black: #000000;
+}
+
+.page-wrapper {
+  max-width: 1140px;
+  margin: 0 auto;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.card {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  font-family: Overwatch;
+  padding: 20px 40px;
+  background-color: var(--colours-ow-light-blue);
+  box-shadow: 0 0 6px #242d44;
+  box-sizing: border-box;
+  border-radius: 2px;
 }

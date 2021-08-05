@@ -1,13 +1,21 @@
 import './SearchInput.css';
 import React from 'react';
+import Spinner from 'react-loader-spinner';
 
 const SearchInput = props => {
-  const { handleClick, handleChange } = props;
+  const { handleClick, handleChange, isLoading, btnText, placeholder } = props;
+
   return (
-    <div className='search-input-wrapper'>
-      <input className='search-input' type='text' onChange={handleChange} placeholder='i.e. bob#12345' />
-      <button className='search-btn' onClick={handleClick}>
-        Flex
+    <div className='card search-input-wrapper'>
+      <input
+        className='search-input'
+        type='text'
+        onChange={handleChange}
+        placeholder={placeholder}
+        disabled={isLoading}
+      />
+      <button className='search-btn' onClick={handleClick} disabled={isLoading}>
+        {isLoading ? <Spinner type='Oval' color='white' height='30' style={{ display: 'flex' }} /> : btnText}
       </button>
     </div>
   );

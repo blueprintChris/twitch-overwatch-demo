@@ -1,0 +1,15 @@
+.alert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  background-color: lightcoral;
+  width: 100%;
+  border: 1px solid red;
+  border-radius: 3px;
+}
+
+.alert-text {
+  color: white;
+  font-size: 25px;
+}
