@@ -4,9 +4,9 @@ import React from 'react';
 const PlayerInfo = props => {
   const { player } = props;
   return (
-    <div className='player-wrapper'>
+    <div className='card player-wrapper'>
       <div className='player-image'>
-        <img src={player.accounts[0].portrait} alt='' height='50' width='50' />
+        <img src={player.accounts[0].portrait} alt='' height='100' width='100' />
       </div>
       <div className='player-details'>
         <span>{player.accounts[0].name}</span>

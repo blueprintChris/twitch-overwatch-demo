@@ -2,14 +2,14 @@ import './HeroStats.css';
 import React from 'react';
 
 const HeroStats = props => {
-  const { playerStats } = props;
-  const { competitive } = playerStats.stats;
+  const { playerStats, isComp } = props;
+  const { competitive, quickplay } = playerStats.stats;
 
   return (
-    <div className='hero-wrapper'>
+    <div className='card hero-wrapper'>
       <div className='heroes'>
-        {Object.keys(competitive).map(key => {
-          const hero = competitive[key];
+        {Object.keys(isComp ? competitive : quickplay).map(key => {
+          const hero = isComp ? competitive[key] : quickplay[key];
           return (
             <div className='hero-row' key={hero.name}>
               <div className='hero-name'>{hero.name}</div>

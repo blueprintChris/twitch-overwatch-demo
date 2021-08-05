@@ -1,0 +1,32 @@
+.tabs-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.tab-btn-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.tab-btn:hover {
+  background-color: var(--colours-ow-orange-light);
+}
+
+.tabs-panel {
+  width: 100%;
+  font-size: 30px;
+  color: white;
+}

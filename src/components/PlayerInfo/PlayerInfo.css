@@ -5,9 +5,15 @@
   align-items: center;
 }
 
+.player-image img {
+  border-radius: 20px;
+}
+
 .player-details {
   display: flex;
   flex-direction: column;
   padding: 10px;
   box-sizing: border-box;
+  font-size: 30px;
+  color: white;
 }

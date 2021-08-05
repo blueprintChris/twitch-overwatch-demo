@@ -6,6 +6,7 @@ import PlayerInfo from '../components/PlayerInfo/PlayerInfo';
 import Header from '../components/Header/Header';
 import PlayerStats from '../components/PlayerStats/PlayerStats';
 import Alert from '../components/Alert/Alert';
+import Tabs from '../components/Tabs/Tabs';
 
 const Overwatch = () => {
   const [{ player, playerStats, error, isLoading }, dispatch] = useReducer(playerReducer, initialState);
@@ -47,7 +48,12 @@ const Overwatch = () => {
       />
       {error && <Alert text={error.message} />}
       {player && <PlayerInfo player={player} />}
-      {playerStats && <PlayerStats playerStats={playerStats} />}
+      {playerStats && (
+        <Tabs playerStats={playerStats} buttons={['Quickplay', 'Competitive']} isColumn={true}>
+          <PlayerStats playerStats={playerStats} />
+          <PlayerStats playerStats={playerStats} isComp={true} />
+        </Tabs>
+      )}
     </>
   );
 };

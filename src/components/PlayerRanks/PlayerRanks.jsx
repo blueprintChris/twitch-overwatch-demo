@@ -20,7 +20,7 @@ const PlayerRanks = props => {
   };
 
   return (
-    <div className='player-stats-wrapper'>
+    <div className='card player-stats-wrapper'>
       <div className='player-stats'>
         {Object.keys(competitive_rank).map(key => {
           const rank = competitive_rank[key];
@@ -33,7 +33,7 @@ const PlayerRanks = props => {
                 height='30'
                 alt='rank-img'
               />
-              <div>{rank}</div>
+              <div className='player-stats-rank'>{rank}</div>
             </div>
           );
         })}

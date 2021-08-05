@@ -4,10 +4,12 @@
 }
 
 .app {
+  height: 100vh;
   text-align: center;
   font-family: Overwatch, Arial, Helvetica, sans-serif;
   background-color: var(--colours-ow-dark-blue);
   padding: 0 20px;
+
   --colours-ow-light-pink: #f0edf2;
   --colours-ow-orange: #f99e1a;
   --colours-ow-orange-light: #f5c57e;
