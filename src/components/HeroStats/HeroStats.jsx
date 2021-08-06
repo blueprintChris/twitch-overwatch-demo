@@ -10,18 +10,19 @@ const HeroStats = props => {
   const { competitive, quickplay } = playerStats.stats;
 
   useEffect(() => {
-    const heroes = Object.keys(quickplay).map(hero => {
-      return hero;
+    const heroes = Object.keys(quickplay).map(key => {
+      return quickplay[key].raw_name;
     });
 
     setHeroNames(heroes);
-  }, []);
+  }, [quickplay]);
 
   return (
     <div className='card hero-wrapper'>
       <Tabs buttons={heroNames} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} isColumn={true}>
         {Object.keys(isComp ? competitive : quickplay).map((key, index) => {
           const hero = isComp ? competitive[key] : quickplay[key];
+          console.log(hero);
           return <HeroDetails hero={hero} selectedIndex={selectedIndex} currentIndex={index} />;
         })}
       </Tabs>

@@ -10,6 +10,7 @@
   flex-direction: column;
   justify-content: center !important;
   align-items: flex-start !important;
+  margin: 0 !important;
 }
 
 .tab-btn-wrapper {
@@ -22,6 +23,7 @@
 .row {
   width: 100%;
   flex-direction: row !important;
+  align-items: flex-start;
 }
 
 .tab-btn:hover {

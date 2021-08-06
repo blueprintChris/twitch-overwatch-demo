@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import TabButton from './TabButton/TabButton';
 import TabPanel from './TabPanel/TabPanel';
 import './Tabs.css';
@@ -11,7 +11,7 @@ const Tabs = props => {
   };
 
   return (
-    <div className={`tabs-wrapper ${isColumn ? 'row' : 'column'} `}>
+    <div className={`tabs-wrapper ${isColumn ? 'row' : 'column'}`}>
       <div className={`tab-btn-wrapper ${isColumn ? 'column' : 'row'}`}>
         {buttons.map((btn, index) => (
           <TabButton
