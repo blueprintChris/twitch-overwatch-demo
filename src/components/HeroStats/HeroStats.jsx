@@ -1,28 +1,30 @@
 import './HeroStats.css';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Tabs from '../Tabs/Tabs';
+import HeroDetails from '../HeroDetails/HeroDetails';
 
 const HeroStats = props => {
+  const [heroNames, setHeroNames] = useState([]);
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const { playerStats, isComp } = props;
   const { competitive, quickplay } = playerStats.stats;
 
+  useEffect(() => {
+    const heroes = Object.keys(quickplay).map(hero => {
+      return hero;
+    });
+
+    setHeroNames(heroes);
+  }, []);
+
   return (
     <div className='card hero-wrapper'>
-      <div className='heroes'>
-        {Object.keys(isComp ? competitive : quickplay).map(key => {
+      <Tabs buttons={heroNames} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} isColumn={true}>
+        {Object.keys(isComp ? competitive : quickplay).map((key, index) => {
           const hero = isComp ? competitive[key] : quickplay[key];
-          return (
-            <div className='hero-row' key={hero.name}>
-              <div className='hero-name'>{hero.name}</div>
-              <div className='hero-details'>
-                <div className='hero-details-text'>Played: {hero.game.games_played || '0'}</div>
-                <div className='hero-details-text'>Won: {hero.game.games_won || '0'}</div>
-                <div className='hero-details-text'>Lost: {hero.game.games_lost || '0'}</div>
-                <div className='hero-details-text'>Win rate: {hero.game.win_percentage || '0'}%</div>
-              </div>
-            </div>
-          );
+          return <HeroDetails hero={hero} selectedIndex={selectedIndex} currentIndex={index} />;
         })}
-      </div>
+      </Tabs>
     </div>
   );
 };

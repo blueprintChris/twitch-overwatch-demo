@@ -2,37 +2,5 @@
   display: flex;
   width: 100%;
   justify-content: center;
-}
-
-.heroes {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.hero-row {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px dotted grey;
-  padding-top: 10px;
-  padding-bottom: 5px;
-  padding-left: 20px;
-  padding-right: 10px;
-  font-size: 30px;
-  color: white;
-}
-
-.hero-details {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-basis: 50%;
-}
-
-.hero-details-text {
-  flex-basis: 50%;
-  display: flex;
+  padding: 0;
 }

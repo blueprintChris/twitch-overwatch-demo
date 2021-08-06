@@ -10,6 +10,7 @@ import Tabs from '../components/Tabs/Tabs';
 
 const Overwatch = () => {
   const [{ player, playerStats, error, isLoading }, dispatch] = useReducer(playerReducer, initialState);
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const [username, setUsername] = useState('');
 
   const handleOverwatchFetch = async () => {
@@ -49,7 +50,12 @@ const Overwatch = () => {
       {error && <Alert text={error.message} />}
       {player && <PlayerInfo player={player} />}
       {playerStats && (
-        <Tabs playerStats={playerStats} buttons={['Quickplay', 'Competitive']} isColumn={true}>
+        <Tabs
+          playerStats={playerStats}
+          buttons={['Quickplay', 'Competitive']}
+          selectedIndex={selectedIndex}
+          setSelectedIndex={setSelectedIndex}
+        >
           <PlayerStats playerStats={playerStats} />
           <PlayerStats playerStats={playerStats} isComp={true} />
         </Tabs>
