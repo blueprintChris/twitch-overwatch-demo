@@ -22,7 +22,6 @@ const HeroStats = props => {
       <Tabs buttons={heroNames} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} isColumn={true}>
         {Object.keys(isComp ? competitive : quickplay).map((key, index) => {
           const hero = isComp ? competitive[key] : quickplay[key];
-          console.log(hero);
           return <HeroDetails hero={hero} selectedIndex={selectedIndex} currentIndex={index} />;
         })}
       </Tabs>
